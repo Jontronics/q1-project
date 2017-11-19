@@ -41,18 +41,27 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-1 mx-auto" style = "background-color: blue; height: 400px; width: 100%"></div>
+    <div class="col-xs-1 mx-auto" style = "background-color: blue; height: 400px; width: 100%">
+      
+      <div class="map-responsive" style="width:100px">
+        
+        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d12099.01427381545!2d-73.91834625!3d40.7014247!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1511111754521" width="506px" height="400px" frameborder="0" style="border:0; margin-left:-15px;" allowfullscreen></iframe>
+        
+        
+      </div>
+      
+    </div>
   </div>  
 </div>
 
 
+<!-- this is the carousel part -->
+
 <div class="container">
   <div class="row">
-    <div class="col-xs-1 mx-auto" style = "background-color: yellow; height: 400px; width: 100%;">
-      
-      
+    <div class="col-xs-1 mx-auto" style = "background-color: ; height: 180px; width: 100%;">
       <div class = "carousel slide" id = "myslider" data-ride="carousel" data-interval="0" style="width: 100%;">      
-        <ol class="carousel-indicators">    
+        <ol class="carousel-indicators" style="bottom:-60px;">    
           <li data-target="#myslider" data-slide-to="0"></li>
           <li data-target="#myslider" data-slide-to="1"></li>
           <li data-target="#myslider" data-slide-to="2"></li>    
@@ -63,22 +72,23 @@
         <div class = "carousel-inner">    
           <div class = "item active">
             
-            <!-- try putting in card here-->
+          <!-- this is the card inside carousel-->
             
             <div class="container">
                 <div class="row">        
-                    <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                    <div class="col-sm-4 col-md-4 col-lg-3 mt-4">
                         <div class="card">
-                            <div class="card-block">
+                            <div class="card-block" style="background-color:white; margin-left: 20px;">
                                 <h4 class="card-title">Appointment 1</h4>
+                                <h5 class="card-title">1 pm</h5>
                                 <div class="meta">
-                                    <a href="#">1625 Putnam Ave</a>
+                                    <a href="#">1625 Putnam Ave, apt 5D</a>
                                 </div>
                                 <div class="card-text">
                                     Keys in office Buzz for FD.
                                 </div>
                             </div>
-                            <div class="card-footer">
+                            <div class="card-footer" style="background-color:white; margin-left: 20px;">
                                 <span class="float-right">Jessica</span>
                                 <span><i class=""></i>347-383-1821</span>
                             </div>
@@ -87,23 +97,71 @@
                  </div>
               </div>
             
-            <!-- try putting in card here-->
+            <!-- END card inside carousel-->
             
           </div>
           
-          <div class = "item">      
-            <img src="images-2/cube.svg" style="width: 40%; height: 40%">
-            <div class="carousel-caption">          
-              <h1>tight fool</h1>            
-            </div>
+          <div class = "item">  
+            
+            <!-- this is the card inside carousel-->
+              
+              <div class="container">
+                  <div class="row">        
+                      <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                          <div class="card">
+                              <div class="card-block" style="background-color:white;margin-left: 20px;">
+                                  <h4 class="card-title">Appointment 2</h4>
+                                  <h5 class="card-title">2 pm</h5>
+                                  <div class="meta">
+                                      <a href="#">310 Knickerbocker ave, apt 2F</a>
+                                  </div>
+                                  <div class="card-text">
+                                      Apt open. FD code #1234
+                                  </div>
+                              </div>
+                              <div class="card-footer" style="background-color:white;margin-left: 20px;"> 
+                                  <span class="float-right">Bob</span>
+                                  <span><i class=""></i>646-873-1954</span>
+                              </div>
+                           </div>
+                        </div>
+                   </div>
+                </div>
+              
+              <!-- END card inside carousel-->
+            
+            
           </div>
                     
-          <div class = "item">          
-            <img src="images-2/graphic-design.svg" style="width: 40%; height: 40%">
-            <div class="carousel-caption">              
-              <h1>kittens</h1>              
-            </div>
-          </div>
+          <div class = "item">    
+            
+            <!-- this is the card inside carousel-->
+              
+              <div class="container">
+                  <div class="row">        
+                      <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                          <div class="card">
+                              <div class="card-block" style="background-color:white;margin-left: 20px;">
+                                  <h4 class="card-title">Appointment 3</h4>
+                                  <h5 class="card-title">5 pm</h5>
+                                  <div class="meta">
+                                      <a href="#">219 Melrose st, , apt 1R</a>
+                                  </div>
+                                  <div class="card-text">
+                                      Call tenant jerry 212-212-211
+                                  </div>
+                              </div>
+                              <div class="card-footer"style="background-color:white;margin-left: 20px;">
+                                  <span class="float-right">Jessica</span>
+                                  <span><i class=""></i>347-383-1821</span>
+                              </div>
+                           </div>
+                        </div>
+                   </div>
+                </div>
+              
+              <!-- END card inside carousel-->
+          
         </div> 
         
         <a class="left carousel-control" href="#myslider" data-slide="prev">          
@@ -116,35 +174,12 @@
         
       </div>
       
-      
-      
-      
-      
+          
     </div>
   </div>  
 </div>
 
-<div class="container">
-    <div class="row">        
-        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-            <div class="card">
-                <div class="card-block">
-                    <h4 class="card-title">Appointment 1</h4>
-                    <div class="meta">
-                        <a href="#">1625 Putnam Ave</a>
-                    </div>
-                    <div class="card-text">
-                        Keys in office Buzz for FD.
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <span class="float-right">Jessica</span>
-                    <span><i class=""></i>347-383-1821</span>
-                </div>
-             </div>
-          </div>
-     </div>
-  </div>
+
 
 
 
