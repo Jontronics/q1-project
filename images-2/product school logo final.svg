@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="675px" height="173px" viewBox="0 0 675 173" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="665" height="163"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-5" y="-5" width="675" height="173">
+            <rect x="-5" y="-5" width="675" height="173" fill="white"></rect>
+            <use xlink:href="#path-1" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-547.000000, -373.000000)">
+            <g id="Group-2" transform="translate(552.000000, 378.000000)">
+                <g id="Rectangle-2">
+                    <use fill="#2E2F30" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <use stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="10" xlink:href="#path-1"></use>
+                </g>
+                <text id="PRODUCT-SCHOOL" font-family="Helvetica" font-size="64" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="31" y="99">PRODUCT SCHOOL</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

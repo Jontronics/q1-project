@@ -1,0 +1,50 @@
+links 
+
+
+
+https://devdactic.com/ionic-calendar-app/  - video tutorial
+
+
+appointments map ux /ui   what it should sorta look like
+
+https://www.uplabs.com/posts/appointment-on-map
+
+
+
+aaaalllll da resources :
+
+
+https://startbootstrap.com/bootstrap-resources/#dev-tools
+
+
+address form field 
+
+
+https://bootsnipp.com/snippets/featured/address-details-modal-form
+
+
+google maps
+
+https://bootsnipp.com/snippets/q8lyg
+
+
+
+library of snippets 
+
+https://bootdey.com/bootstrap-snippets?q=google+map
+
+Calendar bootstrap 
+
+https://getbootstrapadmin.com/remark/base/apps/calendar/calendar.html
+
+http://demos.creative-tim.com/fullcalendar?_ga=2.125619215.44416509.1511041516-1537659984.1511041516
+
+
+
+http://demos.creative-tim.com/datepicker?_ga=2.192138287.44416509.1511041516-1537659984.1511041516     <!— calender after form field 
+
+
+
+Ohhhh shit its hammer time (gestures and swipes library)
+
+https://hammerjs.github.io/
