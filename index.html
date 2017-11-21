@@ -1,16 +1,24 @@
 
-<!-- fix nav --> 
-
-<!-- for projects, you can link stuff to a code pen, maybe add a button to git hub -->
-
-<!-- add in media queries, there are some margin stuff to tweek, web dev image needs a fixn --> 
+<!----  calender code 
 
 
-<!doctype html>
+https://www.cssscript.com/simple-responsive-month-calendar-with-javascript-and-css/
+
+https://www.cssscript.com/demo/minimal-inline-calendar-date-picker-vanilla-javascript/
+
+https://www.cssscript.com/demo/customizable-pure-javascript-calendar-library-jscalendar/
+
+https://www.cssscript.com/demo/modern-filterable-dropdown-select-vanilla-javascript/
+
+--------   (mobile friendly date picker)https://www.cssscript.com/demo/mobile-friendly-date-picker-pure-javascript-cuppa-datepicker/
+
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Personal Website</title>
+  <title>Q-one-potential-project</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -30,48 +38,41 @@
       <p style="font-size: 24px;font-weight: 100; margin-top:10px;"> April 2018</p>    
     </div>
 
-    <div class="col-xs-1 mx-auto" style = "background-color: white; height: 50px; width: 14.2857142857% ; ">
-      
+    <div class="col-xs-1 mx-auto" style = "background-color: white; height: 50px; width: 14.2857142857% ; ">  
       <p style="font-weight:100; margin-top:5px;"> MON</p>
-      <p style="font-weight:400; margin-left:6px; margin-top:-5px;"> 10</p>
-      
+      <p style="font-weight:400; margin-left:6px; margin-top:-5px;"> 10</p>      
     </div>
+    
     <div class="col-xs-1 mx-auto" style = "background-color:white; height: 50px; width:14.2857142857% ; ">
-      
       <p style="font-weight:100; margin-top:5px;"> TUE</p>
-      <p style="font-weight:400; margin-left:6px; margin-top:-5px;"> 11</p>
-      
+      <p style="font-weight:400; margin-left:6px; margin-top:-5px;"> 11</p>      
     </div>
-    <div class="col-xs-1 mx-auto" style = "background-color: white; height: 50px; width:14.2857142857% ; ">
-      
+    
+    <div class="col-xs-1 mx-auto" style = "background-color: white; height: 50px; width:14.2857142857% ; ">      
       <p style="font-weight:100; margin-top:5px;"> WED</p>
-      <p style="font-weight:400; margin-left:6px; margin-top:-5px;"> 12</p>
-      
+      <p style="font-weight:400; margin-left:6px; margin-top:-5px;"> 12</p>    
     </div>
-    <div class="col-xs-1 mx-auto" style = "background-color:white; height: 50px; width:14.2857142857% ; ">
-      
+    
+    <div class="col-xs-1 mx-auto" style = "background-color:white; height: 50px; width:14.2857142857% ; ">      
       <p style="font-weight:100; margin-top:5px;"> THU</p>
-      <p style="font-weight:400; margin-left:4px; margin-top:-5px;"> 13</p>
-      
+      <p style="font-weight:400; margin-left:4px; margin-top:-5px;"> 13</p>      
     </div>
-    <div class="col-xs-1 mx-auto" style = "background-color: white; height: 50px; width:14.2857142857% ; ">
-      
+    
+    <div class="col-xs-1 mx-auto" style = "background-color: white; height: 50px; width:14.2857142857% ; ">      
       <p style="font-weight:100; margin-top:5px;"> FRI</p>
-      <p style="font-weight:400; margin-left:1px; margin-top:-5px;"> 14</p>
-      
+      <p style="font-weight:400; margin-left:1px; margin-top:-5px;"> 14</p>      
     </div>
-    <div class="col-xs-1 mx-auto" style = "background-color:white; height: 50px; width: 14.2857142857%; ">
-      
+    
+    <div class="col-xs-1 mx-auto" style = "background-color:white; height: 50px; width: 14.2857142857%; ">      
       <p style="font-weight:100; margin-top:5px;"> SAT</p>
-      <p style="font-weight:400; margin-left:2px; margin-top:-5px;"> 15</p>
-      
+      <p style="font-weight:400; margin-left:2px; margin-top:-5px;"> 15</p>      
     </div>
-    <div class="col-xs-1 mx-auto" style = "background-color: white; height: 50px; width:14.2857142857% ; ">
-      
+    
+    <div class="col-xs-1 mx-auto" style = "background-color: white; height: 50px; width:14.2857142857% ; ">      
       <p style="font-weight:100; margin-top:5px;"> SUN</p>
-      <p style="font-weight:400; margin-left:5px; margin-top:-5px;"> 16</p>
-      
+      <p style="font-weight:400; margin-left:5px; margin-top:-5px;"> 16</p>      
     </div>
+    
   </div>  
 </div>
 
@@ -213,13 +214,108 @@
 <!--- bottom buttuns -->    
     
     <div class="col-xs-6 mx-auto" style = "background-color: yellow; height: 50px; padding: 0; ">
-      <button class="btn btn-primary" style="width:100%;height: 100%; border-radius:0px; " type="submit">New Appointment +</button>      
-    </div>  
-    <div class="col-xs-6 mx-auto" style = "background-color:green; height: 50px; padding: 0; ">      
-      <button class="btn btn-primary" style="width:100%; height: 100%; border-radius:0px;" type="submit">Delete Appointment -</button>    
-    </div>  
-  </div>  
-</div>
+      <button class="btn btn-primary" style="width:100%;height: 100%; border-radius:0px; " type="button submit" data-toggle="modal" data-target="#exampleModalLong">New Appointment +</button>      
+    </div>    
+<!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Create a New Appointmen</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+<!-- where the input form starts-->                  
+            <div class="form-group row">
+              <label for="example-month-input" class="col-2 col-form-label">Month</label>
+              <div class="col-10">
+                <input class="form-control" type="month" value="2011-08" id="example-month-input">
+              </div>
+            </div>
+                      
+            <div class="form-group row">
+              <label for="example-datetime-local-input" class="col-2 col-form-label">Date and time</label>
+              <div class="col-10">
+                <input class="form-control" type="datetime-local" value="2017-08-19T13:45:00" id="example-datetime-local-input">
+              </div>
+            </div>
+                        
+            <div class="form-group row">
+                <label for="example-text-input" class="col-2 col-form-label">Address + apt number</label>
+                <div class="col-10">
+                  <input class="form-control" type="text" value="e.g. 1625 Putnam Ave , apt 2R" id="example-text-input">
+                </div>
+              </div>
+                        
+            <div class="form-group row">
+              <label for="example-text-input" class="col-2 col-form-label">Name of Client</label>
+              <div class="col-10">
+                <input class="form-control" type="text" value="Joseph Freidman" id="example-text-input">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label for="example-tel-input" class="col-2 col-form-label">Telephone</label>
+              <div class="col-10">
+                <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input">
+              </div>
+            </div>
+                  
+            <div class="form-group row">
+                <label for="example-text-input" class="col-2 col-form-label">Notes</label>
+                <div class="col-10">
+                  <input class="form-control" type="text" value="Notes" id="example-text-input">
+                </div>
+              </div>
+          
+        
+<section class="keep this date, time separated">        
+    <!--      <div class="form-group row">
+            <label for="example-date-input" class="col-2 col-form-label">Date</label>
+            <div class="col-10">
+              <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+            </div>
+          </div> -->
+              
+     <!--
+          <div class="form-group row">
+            <label for="example-time-input" class="col-2 col-form-label">Time</label>
+            <div class="col-10">
+              <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+            </div>
+          </div> -->
+</section>             
+            
+            
+                   
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+          </div>
+        </div>
+        
+        
+        
+        <div class="col-xs-6 mx-auto" style = "background-color:green; height: 50px; padding: 0; ">      
+          <button class="btn btn-primary" style="width:100%; height: 100%; border-radius:0px;" type="submit">Delete Appointment -</button>    
+        </div>  
+      </div>  
+    </div>
+
+
+
+
+
+
+
+
+
+
 
 
 <script type="text/javascript" src="main.js"></script>

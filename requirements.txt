@@ -1,0 +1,45 @@
+
+EXERCISE 01
+Frontend Project
+After each section of our course, we will ask you to come up with a project to build that demonstrates what you've learned this far in the course. This is your chance to choose something you are excited about to spend time on!
+
+Requirements
+
+
+The Frontend Project should:
+
+Include HTML, CSS, and JavaScript
+Store some data in Local Storage
+Allow for users to be able to interact with the site
+Have at least three tested functions
+Be deployed
+To successfully complete the project, you must:
+
+Use a project planning tool such as Pivotal Tracker or Trello
+Make multiple commits with readable commit messages
+Include a readme with installation instructions and screenshots
+Add your project to an online portfolio
+Present your project to your class
+
+
+Project Proposal A
+
+Provide a brief description about your project that answers the following questions:
+
+What problem or need does your project solve?
+
+	- users can keep track of the location of their daily appointments. 
+	- makes the user more organize, and won’t be late to their appointments. 
+	- you can loose a lead if you don’t show up!
+
+Who would be a user of your website?
+
+	- real-estate agent
+
+What technologies will you be using?
+
+	- boot strap, java-script 
+
+
+
+
