@@ -3,14 +3,14 @@ var form = document.getElementById('addForm');
 
 var itemList = document.getElementById('items'); 
 
-
 // form submit event
 
-form.addEventListener('submit', addItem);
+form.addEventListener('submit', addItem);  // create another functions, to clear form and close wclose module winddow.)
 
 // form delete event 
 
 itemList.addEventListener('click', removeItem);
+
 
 // add item  fun fun Function 
 
@@ -22,17 +22,55 @@ function addItem(e){
   
   var newItem = document.getElementById('item').value;
   
+  var newItemTwo = document.getElementById('time').value;
+  
+  var newItemThree = document.getElementById('name-of-client').value;
+  
+  var newItemFour = document.getElementById('phone-number-client').value;
+
+  var newItemFive = document.getElementById('acces-notes').value;
+
+  
   // create a new li element with the text grab from above
   
   var li = document.createElement('li');
       li.className = 'list-group-item';
-      li.style.height = '100px';
+      li.style.height = '150px';
       console.log(li)
+  
+  // create a new p element with the text grab from above
+      
+  var pOne  = document.createElement('p');
+      pOne.className = 'items';
+      console.log(pOne)
+      
+      
+  var pTwo  = document.createElement('p');
+      pOne.className = 'items';
+      console.log(pTwo)    
+      
+      
+  var pThree  = document.createElement('p');
+      pOne.className = 'items';
+      console.log(pThree)  
+      
+  var pFour  = document.createElement('p');
+      pOne.className = 'items';
+      console.log(pFour)         
   
   // add text node with input value
   
   li.appendChild(document.createTextNode(newItem));
   
+  pOne.appendChild(document.createTextNode(newItemTwo));
+  
+  pTwo.appendChild(document.createTextNode(newItemThree));
+  
+  pThree.appendChild(document.createTextNode(newItemFour));
+
+  pFour.appendChild(document.createTextNode(newItemFive));
+
+
   // create delete BUTTON
   var deleteBtn =  document.createElement('button');
       deleteBtn.style.width = '80px';
@@ -55,7 +93,27 @@ function addItem(e){
   
   itemList.appendChild(li);
   
+  // append p elements into LI; (not sure if this is the best way but its working)  
+  li.appendChild(pOne); 
+  li.appendChild(pTwo); 
+  li.appendChild(pThree);
+  li.appendChild(pFour);
+  li.appendChild(pFive);  
+  
+  
 }
+
+
+
+
+
+// create a function to clear the form 
+
+  
+
+// create a function to cloes the modal window. 
+
+
 
 // Remove Item Function 
 
@@ -71,7 +129,6 @@ function removeItem(e){
     }
     
   }
-  
   
 }
 
