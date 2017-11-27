@@ -44,25 +44,42 @@ function addItem(e){
        */
       // li.className = 'list-group-item';
       li.className = 'item';
-
+      li.style.maxWidth = '95%';
+      li.style.border = 'solid 1px #d3d3d3';
+      li.style.padding = '10px';
       li.style.height = '150px';
+      li.style.marginRight = '12%';
+      li.style.marginLeft = '12%';
+      li.style.fontWeight = '500';
+      li.style.fontSize = '14px';
+      
       console.log(li)
 
   // create a new p element with the text grab from above
 
   var pOne  = document.createElement('p');
       pOne.className = 'items';
+      pOne.style.fontSize = '12px';
+      pOne.style.fontWeight = '400';
+      pOne.style.marginTop = '5px';
 
   var pTwo  = document.createElement('p');
-      pOne.className = 'items';
+      pTwo.className = 'items';
+      pTwo.style.fontSize = '12px';
+      pTwo.style.fontWeight = '200';
+      
       console.log(pTwo)
 
   var pThree  = document.createElement('p');
-      pOne.className = 'items';
+      pThree.className = 'items';
+      pThree.style.fontSize = '12px';
+      pThree.style.fontWeight = '200';
       console.log(pThree)
 
   var pFour  = document.createElement('p');
-      pOne.className = 'items';
+      pFour.className = 'items';
+      pFour.style.fontSize = '12px';
+      pFour.style.fontWeight = '200';
       console.log(pFour)
 
   // add text node with input value
@@ -80,9 +97,9 @@ function addItem(e){
 
   // create delete BUTTON
   var deleteBtn =  document.createElement('button');
-      deleteBtn.style.width = '80px';
+      deleteBtn.style.width = '50px';
       deleteBtn.style.float = 'right';
-      deleteBtn.style.height = '100%';
+      deleteBtn.style.height = '50px';
 
   // add the classes to the delete BUTTON
 
