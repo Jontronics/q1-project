@@ -135,12 +135,18 @@ function addItem(e){
 
 function removeItem(e){
 
+    console.log(e.target)
+  
+
   if (e.target.classList.contains('delete')){
 
     if (confirm('Are you sure bro?')){
 
-      var li = e.target.parentElement;
+      var li = document.querySelector('.item.active');
+      
       itemList.removeChild(li);
+      
+      document.querySelector('.item').classList.add('active')
 
     }
 
