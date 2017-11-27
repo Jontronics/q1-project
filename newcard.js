@@ -11,14 +11,13 @@ form.addEventListener('submit', addItem);  // create another functions, to clear
 
 itemList.addEventListener('click', removeItem);
 
-
 // add item  fun fun Function 
 
 function addItem(e){
   
   e.preventDefault();
   
-  // get input value 
+  // get input value in the modal
   
   var newItem = document.getElementById('item').value;
   
@@ -42,14 +41,11 @@ function addItem(e){
       
   var pOne  = document.createElement('p');
       pOne.className = 'items';
-      console.log(pOne)
-      
-      
+        
   var pTwo  = document.createElement('p');
       pOne.className = 'items';
       console.log(pTwo)    
-      
-      
+          
   var pThree  = document.createElement('p');
       pOne.className = 'items';
       console.log(pThree)  
@@ -81,6 +77,9 @@ function addItem(e){
   
   deleteBtn.className = "btn btn-danger btn-sm float-right delete";
   
+  
+  
+  
   // append the text node 
   
   deleteBtn.appendChild(document.createTextNode('X'));
@@ -98,7 +97,9 @@ function addItem(e){
   li.appendChild(pTwo); 
   li.appendChild(pThree);
   li.appendChild(pFour);
-  li.appendChild(pFive);  
+  li.appendChild(pFive); 
+  
+   
   
   
 }
