@@ -1,12 +1,11 @@
 
 <!-- stuff to do -->
 
-<!-- Cant seem to clear the form field in modal -->
-
 <!-- Cant seem to close the modal after clicking submit -->
 
-<!--- figure out a way to create a new slider in carousel when new lement gets apeneded // create an array , run a for loop? 
+<!-- form validation -->
 
+<!-- local hosting -->
 
 
 <!--  calender code 
@@ -131,54 +130,62 @@ https://www.cssscript.com/demo/modern-filterable-dropdown-select-vanilla-javascr
             <!--- 1st input form -->
             <div class="container">
               <div class="row">
-                <div class="col-xs-12 col-lg-4 mx-auto" style="background-color: white; height: 450px; max-width:400px;">
+                <div class="col-xs-12 col-md-12 col-lg-12" style="background-color: white; height: 450px; max-width:400px;">
                   <div class="container" style="overflow:hidden;">
                     <div id="main" class="card card-body">
 
                       <form id="addForm" class="form-inline mb-3">
 
-                        <div class="form-group row">
-                          <label for="example-time-local-input" class="col-2 col-form-label">Appointment Address</label>
-                          <div class="col-10">
+                      
+                        <div class="container">
+                          <label for="example-time-local-input" class="col-lg-2">Appointment Address</label>
+                          <div class="col-10 col-md-12 col-lg-12">
                             <input type="text" class="form-control mr-2" id="item">
                           </div>
                         </div>
 
-                        <div class="form-group row">
-                          <label for="example-time-local-input" class="col-2 col-form-label">Appointment Time</label>
-                          <div class="col-10">
+                        <div class="container">
+                          <label for="example-time-local-input" class="col-lg-2">Appointment Time</label>
+                          <div class="col-10 col-md-12 col-lg-12">
                             <input type="text" class="form-control mr-2" id="time">
                           </div>
                         </div>
 
-                        <div class="form-group row">
-                          <label for="example-time-local-input" class="col-2 col-form-label">Name of Client</label>
-                          <div class="col-10">
+                        <div class="container">
+                          <label for="example-time-local-input" class="col-lg-2">Name of Client</label>
+                          <div class="col-10 col-md-12 col-lg-12">
                             <input type="text" class="form-control mr-2" id="name-of-client">
                           </div>
                         </div>
 
-                        <div class="form-group row">
-                          <label for="example-tel-input" class="col-2 col-form-label">Telephone # of client</label>
-                          <div class="col-10">
+                        <div class="container">
+                          <label for="example-tel-input" class="col-lg-2">Telephone # of client</label>
+                          <div class="col-10 col-md-12 col-lg-12">
                             <input class="form-control" type="tel" value="" id="phone-number-client">
                           </div>
                         </div>
 
-                        <div class="form-group row">
-                          <label for="example-time-local-input" class="col-2 col-form-label">Notes to access Unit</label>
-                          <div class="col-10">
+                        <div class="container">
+                          <label for="example-time-local-input" class="col-lg-2">Notes to access Unit</label>
+                          <div class="col-10 col-md-12 col-lg-12">
                             <input type="text" class="form-control mr-2" id="acces-notes">
                           </div>
                         </div>
 
-                        <div class="form-group row" >
-                          <label for="example-time-local-input" class="col-2 col-form-label"></label>
-                          <div class="col-10">
-                            
+                        <div class="container" >
+                          <label for="example-time-local-input" class="col-lg-2"></label>
+                          
+                          <div class="col-10 col-md-12 col-lg-12">  
                             <span> <button type="button" class="btb btn-default" data-dismiss="modal">close</button>  </span>
-                            <input type="submit" class="btn btn" value="click to submit" data-dismiss="modul" style="display:block; border: 1px solid blue; margin: 0 auto;">
                           </div>
+                          
+                            <div class="container">
+                          
+                            <div class="col-xs-12 col-10 col-md-12 col-lg-12">  
+                              <input type="submit" class="btn btn" value="submit new appointment" data-dismiss="" style="border: 1px solid blue; margin: 0 auto;" id="submit-button">
+                            </div>
+                                    
+                            </div>                        
                         </div>
                       </form>
                     </div>
@@ -207,42 +214,27 @@ https://www.cssscript.com/demo/modern-filterable-dropdown-select-vanilla-javascr
 
         <!-- Wrapper for slides -->
 
-        <div class="carousel-inner">
-          
+        <div class="carousel-inner">        
           <div class="item active">
-
             <!-- this is the card inside carousel Appointment 1-->
-
-            <div class="container">
+           <div class="container">
               <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-3 mt-4">
+                <div class="col-sm-12 col-md-12 col-lg-3 mt-4">
                   <div class="card">
-                    <div class="card-block" style="background-color:white; margin-left: 20px;">
-                      <h4 class="card-title">Appointment 1</h4>
-                      <h5 class="card-title">1 pm</h5>
-                      <div class="meta">
-                        <a href="#">1625 Putnam Ave, apt 5D</a>
-                      </div>
-                      <div class="card-text">
-                        Keys in office Buzz for FD.
-                      </div>
-                    </div>
-                    <div class="card-footer" style="background-color:white; margin-left: 20px;">
-                      <span id="name-of-client" class="float-right">Jessica</span>
-                      <span><i class=""></i>347-383-1821</span>
-                    </div>
-                  </div>
+                   <div class="card-block" style="background-color:white; margin-left: 20px;border: solid 1px #d3d3d3; ; max-width: 100%; height:150px; margin-right: 12%; margin-left: 12%;">
+                      <h4 class="card-title" style="text-align: center;">Click Below to Create a New Appointment</h4>
+                      <h5 class="card-title" style="text-align: center;">Slide to view appointments</h5>
+                    </div>                  
+                  </div>                 
                 </div>
               </div>
-            </div>
-            
-          </div>
-          
+            </div>           
+          </div>        
           <a class="left carousel-control" href="#myslider" data-slide="prev">          
-            <span class="glyphicon glyphicon-chevron-left"></span>          
+            <span class="glyphicon glyphicon-chevron-left " style="color:green;"></span>          
           </a>
           <a class="right carousel-control" href="#myslider" data-slide="next">          
-              <span class="glyphicon glyphicon-chevron-right"></span>          
+              <span class="glyphicon glyphicon-chevron-right " style="color:green;"></span>          
             </a>
         </div>
       </div>
@@ -259,6 +251,9 @@ https://www.cssscript.com/demo/modern-filterable-dropdown-select-vanilla-javascr
     <div class="col-xs-12 mx-auto" style="height: 50px; padding: 0; margin-top: 50px; ">
       <button class="btn btn-primary" style="width:100%;height: 100%; border-radius:0px; " type="button submit" data-toggle="modal" data-target="#exampleModalLong">New Appointment +</button>
     </div>
+  </div>
+</div>    
+    
   
     <div class="container">
        <div class="row">

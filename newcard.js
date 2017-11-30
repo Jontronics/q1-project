@@ -7,14 +7,20 @@ var form = document.getElementById('addForm');
 // var itemList = document.getElementById('items');
 var itemList = document.querySelector('.carousel-inner');
 
+var saveCardInfo = [];
 
 // form submit event
 
-form.addEventListener('submit', addItem);  // create another functions, to clear form and close wclose module winddow.)
+form.addEventListener('submit', addItem);  
 
 // form delete event
 
 itemList.addEventListener('click', removeItem);
+
+
+const items = JSON.parse(localStorage.getItem('saveCardInfo')) || [];
+
+
 
 
 // add item  fun fun Function
@@ -23,20 +29,36 @@ function addItem(e){
 
   e.preventDefault();
 
-  // get input value in the modal
+  // get input value from the modal
 
   var newItem = document.getElementById('item').value;
-
+  
   var newItemTwo = document.getElementById('time').value;
 
   var newItemThree = document.getElementById('name-of-client').value;
 
   var newItemFour = document.getElementById('phone-number-client').value;
-
+  
   var newItemFive = document.getElementById('acces-notes').value;
+  
+  // create an object and place all aboove input value in it. 
 
+  var formObject = {
+    
+      item: newItem,
+      time: newItemTwo,
+      nameOfClient:newItemThree,
+      phoneNumberClient:newItemFour,
+      accessNotes:newItemFive  
+  }
 
+  saveCardInfo.push(formObject);
+
+  localStorage.setItem('saveCardInfo', JSON.stringify(saveCardInfo));
+  
   // create a new li element with the text grab from above
+
+
 
   var li = document.createElement('li');
       /**
@@ -53,7 +75,6 @@ function addItem(e){
       li.style.fontWeight = '500';
       li.style.fontSize = '14px';
       
-      console.log(li)
 
   // create a new p element with the text grab from above
 
@@ -62,25 +83,26 @@ function addItem(e){
       pOne.style.fontSize = '12px';
       pOne.style.fontWeight = '400';
       pOne.style.marginTop = '5px';
+      
 
   var pTwo  = document.createElement('p');
       pTwo.className = 'items';
       pTwo.style.fontSize = '12px';
       pTwo.style.fontWeight = '200';
       
-      console.log(pTwo)
+    
 
   var pThree  = document.createElement('p');
       pThree.className = 'items';
       pThree.style.fontSize = '12px';
       pThree.style.fontWeight = '200';
-      console.log(pThree)
+    
 
   var pFour  = document.createElement('p');
       pFour.className = 'items';
       pFour.style.fontSize = '12px';
       pFour.style.fontWeight = '200';
-      console.log(pFour)
+      
 
   // add text node with input value
 
@@ -100,13 +122,15 @@ function addItem(e){
       deleteBtn.style.width = '50px';
       deleteBtn.style.float = 'right';
       deleteBtn.style.height = '50px';
+      deleteBtn.style.borderRadius = '50%'
+      deleteBtn.style.border = 'solid 1px red';
+      deleteBtn.style.backgroundColor = 'white';
+      deleteBtn.style.color = 'red';
+      
 
   // add the classes to the delete BUTTON
 
   deleteBtn.className = "btn btn-danger btn-sm float-right delete";
-
-
-
 
   // append the text node
 
@@ -129,18 +153,38 @@ function addItem(e){
   li.appendChild(pTwo);
   li.appendChild(pThree);
   li.appendChild(pFour);
-  li.appendChild(pFive);
+  
+  
+  // localStorage.setItems('saveCardInfo', JSON.stringify(saveCardInfo));
 
+  this.reset();
+  
+   // .modal('hide'); might have to store the info first
 
-
-
+    // }
+  
 }
 
+// function myCloseModalFunction () {
+// 
+//   var x = document.getElementById('exampleModalLong');
+// 
+//   if (x.style.visibility === "visible") {
+// 
+//     x.style.visibility = 'hidden';
+// 
+//   } else {
+// 
+//     x.style.display = "none";
+// 
+//   }
+// 
+// 
+// }
 
 
 
 
-// create a function to clear the form
 
 
 
