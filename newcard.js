@@ -1,261 +1,186 @@
+// CardApp object
+var CardApp = {
 
-var form = document.getElementById('addForm');
-
-/**
- * get the correct element to append the new carousel item to
- */
-// var itemList = document.getElementById('items');
-var itemList = document.querySelector('.carousel-inner');
-
-var saveCardInfo = [];
-
-// form submit event
-
-form.addEventListener('submit', addItem);  
-
-// form delete event
-
-itemList.addEventListener('click', removeItem);
-
-
-const items = JSON.parse(localStorage.getItem('saveCardInfo')) || [];
-
-
-
-
-// add item  fun fun Function
-
-function addItem(e){
-
-  e.preventDefault();
-
-  // get input value from the modal
-
-  var newItem = document.getElementById('item').value;
-  
-  var newItemTwo = document.getElementById('time').value;
-
-  var newItemThree = document.getElementById('name-of-client').value;
-
-  var newItemFour = document.getElementById('phone-number-client').value;
-  
-  var newItemFive = document.getElementById('acces-notes').value;
-  
-  // create an object and place all aboove input value in it. 
-
-  var formObject = {
-    
-      item: newItem,
-      time: newItemTwo,
-      nameOfClient:newItemThree,
-      phoneNumberClient:newItemFour,
-      accessNotes:newItemFive  
-  }
-
-  saveCardInfo.push(formObject);
-
-  localStorage.setItem('saveCardInfo', JSON.stringify(saveCardInfo));
-  
-  // create a new li element with the text grab from above
-
-
-
-  var li = document.createElement('li');
-      /**
-       * Set the correct class name for the carousel to work
-       */
-      // li.className = 'list-group-item';
-      li.className = 'item';
-      li.style.maxWidth = '95%';
-      li.style.border = 'solid 1px #d3d3d3';
-      li.style.padding = '10px';
-      li.style.height = '150px';
-      li.style.marginRight = '12%';
-      li.style.marginLeft = '12%';
-      li.style.fontWeight = '500';
-      li.style.fontSize = '14px';
-      
-
-  // create a new p element with the text grab from above
-
-  var pOne  = document.createElement('p');
-      pOne.className = 'items';
-      pOne.style.fontSize = '12px';
-      pOne.style.fontWeight = '400';
-      pOne.style.marginTop = '5px';
-      
-
-  var pTwo  = document.createElement('p');
-      pTwo.className = 'items';
-      pTwo.style.fontSize = '12px';
-      pTwo.style.fontWeight = '200';
-      
-    
-
-  var pThree  = document.createElement('p');
-      pThree.className = 'items';
-      pThree.style.fontSize = '12px';
-      pThree.style.fontWeight = '200';
-    
-
-  var pFour  = document.createElement('p');
-      pFour.className = 'items';
-      pFour.style.fontSize = '12px';
-      pFour.style.fontWeight = '200';
-      
-
-  // add text node with input value
-
-  li.appendChild(document.createTextNode(newItem));
-
-  pOne.appendChild(document.createTextNode(newItemTwo));
-
-  pTwo.appendChild(document.createTextNode(newItemThree));
-
-  pThree.appendChild(document.createTextNode(newItemFour));
-
-  pFour.appendChild(document.createTextNode(newItemFive));
-
-
-  // create delete BUTTON
-  var deleteBtn =  document.createElement('button');
-      deleteBtn.style.width = '50px';
-      deleteBtn.style.float = 'right';
-      deleteBtn.style.height = '50px';
-      deleteBtn.style.borderRadius = '50%'
-      deleteBtn.style.border = 'solid 1px red';
-      deleteBtn.style.backgroundColor = 'white';
-      deleteBtn.style.color = 'red';
-      
-
-  // add the classes to the delete BUTTON
-
-  deleteBtn.className = "btn btn-danger btn-sm float-right delete";
-
-  // append the text node
-
-  deleteBtn.appendChild(document.createTextNode('X'));
-
-  // append delete button into the LI
-
-  li.appendChild(deleteBtn);
-
-  // append li to list.
+  // Array containing the cards
+  cards: [],
 
   /**
-   * insert the new element at the beginning of the itemList element, not at the end
+   * init
+   * The constructor method. We call this when the document is fully loaded.
+   * This way we are sure that all the DOM elements we need are loaded. We use
+   * it to set the initial state.
    */
-  // itemList.appendChild(li);
-  itemList.insertBefore(li, itemList.firstChild);
+  init: function(){
+    console.log('CardApp.init');
+     // Bind DOM elemnts to CardApp properties
+    this.form = document.getElementById('addForm'); // CardApp.form is the form used by the user to add new appointment card data
+    this.itemList = document.querySelector('.carousel-inner'); // CardApp.itemList is the carousel, we add new cards to it based on card data
 
-  // append p elements into LI; (not sure if this is the best way but its working)
-  li.appendChild(pOne);
-  li.appendChild(pTwo);
-  li.appendChild(pThree);
-  li.appendChild(pFour);
-  
-  
-  // localStorage.setItems('saveCardInfo', JSON.stringify(saveCardInfo));
+     // Add event listeners to our DOM bindings
+    this.form.addEventListener('submit', this.addItem.bind(this));
+    this.itemList.addEventListener('click', this.removeItem.bind(this));
 
-  this.reset();
-  
-   // .modal('hide'); might have to store the info first
-
-    // }
-  
-}
-
-// function myCloseModalFunction () {
-// 
-//   var x = document.getElementById('exampleModalLong');
-// 
-//   if (x.style.visibility === "visible") {
-// 
-//     x.style.visibility = 'hidden';
-// 
-//   } else {
-// 
-//     x.style.display = "none";
-// 
-//   }
-// 
-// 
-// }
+    this.cards = this.getCardsFromLocalStorage();
+    this.displayAllCards();
+  },
 
 
+  /**
+   * saveCardsToLocalStorage
+   * Save the current CardApp.cards array on localStorage
+   */
+  saveCardsToLocalStorage(){
+    console.log(`CardApp.saveCardsToLocalStorage`);
+    var cardData = JSON.stringify(this.cards);
+    window.localStorage.setItem('cards', cardData);
+  },
 
 
+  /**
+   * getCardsFromLocalStorage
+   * Get the cards saved from localStorage and return them. If no cards are found
+   * in localStorage return an empty array.
+   */
+  getCardsFromLocalStorage(){
+    console.log(`CardApp.getCardsFromLocalStorage`);
+    var cardData = JSON.parse(window.localStorage.getItem('cards')) || [];
+
+    return cardData;
+  },
 
 
+  /**
+   * addItem
+   * Add a card to CardApp.cards and update the UI's card carousel.
+   */
+  addItem: function(e) {
+    console.log('CardApp.addItem');
+    e.preventDefault();
+    // create an object and place all aboove input value in it.
+    var formObject = {
+      id: this.cards.length + 1,
+      item: document.getElementById('item').value,
+      time: document.getElementById('time').value,
+      nameOfClient: document.getElementById('name-of-client').value,
+      phoneNumberClient: document.getElementById('phone-number-client').value,
+      accessNotes: document.getElementById('acces-notes').value
+    };
 
-// create a function to cloes the modal window.
+    this.cards.push(formObject);
+
+    this.saveCardsToLocalStorage();
+    this.form.reset();
+
+    this.displayAllCards();
+  },
 
 
+  /**
+   * removeItem
+   * Remove a card from CardApp.cards and update the UI's card carousel.
+   */
+  removeItem: function(e) {
+    console.log('CardApp.removeItem');
+    if (e.target.classList.contains('delete')){
+      if (confirm('Are you sure bro?')){
 
-// Remove Item Function
+        var li = document.querySelector('.item.active');
+        var cardId = parseInt(li.getAttribute('data-card-id').split(`-`)[1]);
 
-function removeItem(e){
+        for (var i = 0; i < this.cards.length; i++){
+          if (this.cards[i].id, cardId){
+            this.cards.splice(i, 1);
+          }
+        }
 
-    console.log(e.target)
-  
+        this.saveCardsToLocalStorage();
+        this.displayAllCards();
 
-  if (e.target.classList.contains('delete')){
-
-    if (confirm('Are you sure bro?')){
-
-      var li = document.querySelector('.item.active');
-      
-      itemList.removeChild(li);
-      
-      document.querySelector('.item').classList.add('active')
-
+        document.querySelector('.item').classList.add('active')
+      }
     }
+  },
 
+
+  /**
+   * displayAllCards
+   * Display all the cards stored in CardApp.cards. You can call this after
+   * updating the CardApp.cards array, to display the cards in the UI.
+   */
+  displayAllCards: function(){
+    console.log('CardApp.displayAllCards');
+    this.resetCarousel();
+    for (var i = 0; i < this.cards.length; i++){
+      this.appendCard(this.cards[i]);
+    }
+  },
+
+
+  /**
+   * resetCarousel
+   * This resets the entire carousel, removing all cards.
+   */
+  resetCarousel() {
+    console.log('CardApp.resetCarousel');
+    var cardNodes = document.querySelectorAll('.carousel-inner li.card');
+    for (var i = 0; i < cardNodes.length; i++){
+      this.itemList.removeChild(cardNodes[i]);
+    }
+  },
+
+
+  /**
+   * appendCard
+   * Create the HTML for a new card and append it to the carousel.
+   */
+  appendCard: function(card){
+    console.log('CardApp.resetCarousel');
+    // create a new li element with the text grab from above
+    var li = document.createElement('li');
+        li.classList.add('item','card');
+        li.setAttribute(`data-card-id`,`card-${card.id}`);
+
+    // create a new p element with the text grab from above
+    var pOne  = document.createElement('p');
+        pOne.className = 'items';
+    var pTwo  = document.createElement('p');
+        pTwo.className = 'items';
+    var pThree  = document.createElement('p');
+        pThree.className = 'items';
+    var pFour  = document.createElement('p');
+        pFour.className = 'items';
+    // create delete BUTTON
+    var deleteBtn =  document.createElement('button');
+        deleteBtn.className = "btn btn-danger btn-sm float-right delete deleteButton";
+
+    // add text node with input values
+    li.appendChild(document.createTextNode(card.item));
+    pOne.appendChild(document.createTextNode(card.time));
+    pTwo.appendChild(document.createTextNode(card.nameOfClient));
+    pThree.appendChild(document.createTextNode(card.phoneNumberClient));
+    pFour.appendChild(document.createTextNode(card.accessNotes));
+    // append the text node
+    deleteBtn.appendChild(document.createTextNode('X'));
+
+    // Append
+    li.appendChild(deleteBtn);
+    // append p elements into LI; (not sure if this is the best way but its working)
+    li.appendChild(pOne);
+    li.appendChild(pTwo);
+    li.appendChild(pThree);
+    li.appendChild(pFour);
+
+    // insert the new element at the beginning of the itemList element, not at the end
+    this.itemList.insertBefore(li, this.itemList.firstChild);
   }
-
-}
-
+};
 
 
-// <-----------------------module section--------->
+// Create a new namespace, App
+var App = CardApp || {};
 
 
-
-
-
-// add item
-
-
-
-
-
-//notes
-
-// var btn = document.createElement("BUTTON");        // Create a <button> element
-// var t = document.createTextNode("CLICK ME");       // Create a text node
-// btn.appendChild(t);                                // Append the text to <button>
-// document.body.appendChild(btn);                    // Append <button> to <body>
-
-
-// var div = document.createElement('div');
-// div.className = 'form-group';
-//
-// var label = document.createElement('label');
-// label.className = 'col-sm-2 control-label';
-// label.innerHTML = 'Whoa this guy you!!!!';
-// label.for = 'inputText';
-//
-// var div1 = document.createElement('div');
-// div1.className = 'col-sm-10';
-//
-//
-// var commentText = document.createElement('textarea');
-// commentText.className = 'form-control';
-// commentText.id = 'inputText';
-// commentText.rows = '3';
-// commentText.placeholder = 'Write your comments';
-// div.appendChild(label);
-// div1.appendChild(commentText);
-// div.appendChild(div1);
-//
-// document.body.appendChild(div);
+// Bootstrap App
+document.addEventListener("DOMContentLoaded", function(){
+  App.init();
+});
