@@ -1,3 +1,57 @@
+/*
+
+ it's a simple example of how you would structure a larger app with objects. 
+So you basically have an App object which contains all the data and 
+functionality. A cool thing is that you could then create other objects that 
+can be added as properties to the App object, with more that can plug into 
+those objects and so on. That's basically modules. In this case it doesn't 
+make much sense cause there's only on object but when you have multiple modules, 
+all made up of objects you can combine functionality and break up your app 
+into separate components.
+
+*/
+
+
+/* 
+
+That's basically how React, Angular, Vue etc work.
+Same with jQuery, it's basically just one big object called $
+
+*/
+
+
+/* 
+
+it also lets you create a namespace, so other code could call CardApp.addItem( item );
+
+*/
+
+/* 
+
+That's how API's work
+Then you have this bit:
+document.addEventListener("DOMContentLoaded", function(){
+  App.init();
+});
+
+*/
+
+/* 
+
+this means you load the app after all the DOM content has loaded. 
+But you could also load it at a later point, 
+like if you wanted a splash screen or an auth screen.
+
+*/
+
+/*
+
+But in essence it's the same code as you wrote earlier. It's just adding a 
+few lines and organizing it differently. There are a bunch of these systems, 
+they're known as Design Patters
+
+*/ 
+
 // CardApp object
 var CardApp = {
 
@@ -24,7 +78,6 @@ var CardApp = {
     this.displayAllCards();
   },
 
-
   /**
    * saveCardsToLocalStorage
    * Save the current CardApp.cards array on localStorage
@@ -34,7 +87,6 @@ var CardApp = {
     var cardData = JSON.stringify(this.cards);
     window.localStorage.setItem('cards', cardData);
   },
-
 
   /**
    * getCardsFromLocalStorage
@@ -47,7 +99,6 @@ var CardApp = {
 
     return cardData;
   },
-
 
   /**
    * addItem
