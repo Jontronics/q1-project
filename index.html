@@ -39,157 +39,78 @@ https://www.cssscript.com/demo/modern-filterable-dropdown-select-vanilla-javascr
   <script src="https://use.fontawesome.com/760625d1ff.js"></script>
 </head>
 
-<body style="height: 10000px;">
+<body onload="fetchIssues()">
 
   <div class="container">
     <div class="row">
-
-      <!--- calendar -->
-
-      <div class="col-xs-1 mx-auto" style="background-color: white; height: 50px; width: 100%">
-        <p style="font-size: 24px;font-weight: 100; margin-top:10px;"> April 2018</p>
-      </div>
-
-      <div class="col-xs-1 mx-auto" style="background-color: white; height: 50px; width: 14.2857142857% ; ">
-        <p style="font-weight:100; margin-top:5px;"> MON</p>
-        <p style="font-weight:400; margin-left:6px; margin-top:-5px;"> 10</p>
-      </div>
-
-      <div class="col-xs-1 mx-auto" style="background-color:white; height: 50px; width:14.2857142857% ; ">
-        <p style="font-weight:100; margin-top:5px;"> TUE</p>
-        <p style="font-weight:400; margin-left:6px; margin-top:-5px;"> 11</p>
-      </div>
-
-      <div class="col-xs-1 mx-auto" style="background-color: white; height: 50px; width:14.2857142857% ; ">
-        <p style="font-weight:100; margin-top:5px;"> WED</p>
-        <p style="font-weight:400; margin-left:6px; margin-top:-5px;"> 12</p>
-      </div>
-
-      <div class="col-xs-1 mx-auto" style="background-color:white; height: 50px; width:14.2857142857% ; ">
-        <p style="font-weight:100; margin-top:5px;"> THU</p>
-        <p style="font-weight:400; margin-left:4px; margin-top:-5px;"> 13</p>
-      </div>
-
-      <div class="col-xs-1 mx-auto" style="background-color: white; height: 60px; width:14.2857142857% ; ">
-        <p style="font-weight:100; margin-top:5px;"> FRI</p>
-        <p style="font-weight:400; margin-left:1px; margin-top:-5px;"> 14</p>
-      </div>
-
-      <div class="col-xs-1 mx-auto" style="background-color:white; height: 50px; width: 14.2857142857%; ">
-        <p style="font-weight:100; margin-top:5px;"> SAT</p>
-        <p style="font-weight:400; margin-left:2px; margin-top:-5px;"> 15</p>
-      </div>
-
-      <div class="col-xs-1 mx-auto" style="background-color: white; height: 50px; width:14.2857142857% ; ">
-        <p style="font-weight:100; margin-top:5px;"> SUN</p>
-        <p style="font-weight:400; margin-left:5px; margin-top:-5px;"> 16</p>
-      </div>
-
-    </div>
-  </div>
-
-<!-- google maps -->
-
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-1 mx-auto" style="background-color: blue; height: 350px; width: 100%">
-        <div class="iframe-container">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d12099.01427381545!2d-73.91834625!3d40.7014247!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1511111754521" width="506px" height="400px" frameborder="0" style="border:0; margin-left:-15px;"
+      <div class="col-xs-12 mx-auto" style="background-color: white; height: 400px; width: 100%; margin-left: 17px;">
+        <div class="iframe-container" style="margin">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d12099.01427381545!2d-73.91834625!3d40.7014247!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1511111754521" width="100%" height="400px" frameborder="0" style="border:0; margin-left:-15px;"
             allowfullscreen></iframe>
         </div>
-      </div>
+      </div>  
     </div>
-  </div>
-  
-  
-  <!-- Your appointments for today container --> 
-  
-  <div class="container">
-     <div class="row">
-       <div class="col-xs-1 mx-auto" style="background-color: white; height: 50px; width: 100%">
-         <p class="title" style="text-align:center;font-size:24px; font-weight:100; margin-top:10px;">Your Appointments for Today !</p>
-       </div>
-     </div>
-  </div>
-  <!-- item list + delete btn-->
+  </div>  
 
-  <!-- item list end --> 
+    <div class="container" style="margin-top:50px;">  
+    <!-- this is where the new card gets formed -->  
+      <div class="col-lg-12">
+        <div id="issuesList">
+        </div>
+      </div>
+      
+    <!-- this is where the new card gets formed -->  
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 mx-auto" style="height: 50px; padding: 0; margin-top: 50px; ">
+          <button class="btn btn-primary" style="width:100%;height: 100%; border-radius:0px; " type="button submit" data-toggle="modal" data-target="#exampleModalLong">New Appointment +</button>
+        </div>
+      </div>
+    </div>  
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Create a New Appointmen</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <!-- where the input form starts-->
-          <div class="modal-body">
-            <!--- 1st input form -->
-            <div class="container">
-              <div class="row">
-                <div class="col-xs-12 col-md-12 col-lg-12" style="background-color: white; height: 450px; max-width:400px;">
-                  <div class="container" style="overflow:hidden;">
-                    <div id="main" class="card card-body">
+      <!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Create a New Appointmen</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!-- where the input form starts-->
+      <div class="modal-body">
+        <!--- 1st input form -->
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-md-12 col-lg-12" style="background-color: white; height: 450px; max-width:400px;">
+              <div class="container" style="">
+                <div id="main" class="card card-body">
 
-                      <form id="addForm" class="form-inline mb-3">
-
+                  <!-- insert new form here -->
+                  
+                  <div class="jumbotron">
+                    <h3>Add New Issue:</h3>
+                    
+                    <form id="issueInputForm">        
+                      <div class="form-group">
+                        <label for="appointmentAddress">Appoitnment Address</label>
+                        <input type="text" class="form-control" id="appointmentAddress" placeholder="Enter the apointment adress ...">
+                      </div>
                       
-                        <div class="container">
-                          <label for="example-time-local-input" class="col-lg-2">Appointment Address</label>
-                          <div class="col-10 col-md-12 col-lg-12">
-                            <input type="text" class="form-control mr-2" id="item">
-                          </div>
-                        </div>
-
-                        <div class="container">
-                          <label for="example-time-local-input" class="col-lg-2">Appointment Time</label>
-                          <div class="col-10 col-md-12 col-lg-12">
-                            <input type="text" class="form-control mr-2" id="time">
-                          </div>
-                        </div>
-
-                        <div class="container">
-                          <label for="example-time-local-input" class="col-lg-2">Name of Client</label>
-                          <div class="col-10 col-md-12 col-lg-12">
-                            <input type="text" class="form-control mr-2" id="name-of-client">
-                          </div>
-                        </div>
-
-                        <div class="container">
-                          <label for="example-tel-input" class="col-lg-2">Telephone # of client</label>
-                          <div class="col-10 col-md-12 col-lg-12">
-                            <input class="form-control" type="tel" value="" id="phone-number-client">
-                          </div>
-                        </div>
-
-                        <div class="container">
-                          <label for="example-time-local-input" class="col-lg-2">Notes to access Unit</label>
-                          <div class="col-10 col-md-12 col-lg-12">
-                            <input type="text" class="form-control mr-2" id="acces-notes">
-                          </div>
-                        </div>
-
-                        <div class="container" >
-                          <label for="example-time-local-input" class="col-lg-2"></label>
-                          
-                          <div class="col-10 col-md-12 col-lg-12">  
-                            <span> <button type="button" class="btb btn-default" data-dismiss="modal">close</button>  </span>
-                          </div>
-                          
-                            <div class="container">
-                          
-                            <div class="col-xs-12 col-10 col-md-12 col-lg-12">  
-                              <input type="submit" class="btn btn" value="submit new appointment" data-dismiss="" style="border: 1px solid blue; margin: 0 auto;" id="submit-button">
-                            </div>
-                                    
-                            </div>                        
-                        </div>
-                      </form>
-                    </div>
-                  </div>
+                      <div class="form-group">
+                        <label for="issueDescInput">Time of appointment</label>
+                        <input type="time-local" class="form-control" id="issueDescInput" placeholder="enter time of appointment eg 2 pm .">
+                      </div>
+                    
+                      <div class="form-group">
+                        <label for="issueAssignedToInput">Assigned To</label>
+                        <input type="text" class="form-control" id="issueAssignedToInput" placeholder="Enter responsible ...">
+                      </div>
+                      <button type="submit" class="btn btn-primary">Add</button>
+                    </form>  
+                  </div>              
                 </div>
               </div>
             </div>
@@ -197,76 +118,29 @@ https://www.cssscript.com/demo/modern-filterable-dropdown-select-vanilla-javascr
         </div>
       </div>
     </div>
-  
-<!-- form module end --> 
-
-<!-- this is the carousel part -->
-
-<div class="container" style="margin-top:px;">
-  <div class="row">
-    <div class="col-xs-1 mx-auto" style="background-color: ; height: 150px; width: 100%;">
-      <div class="carousel slide" id="myslider" data-ride="carousel" data-interval="0" style="width: 100%;">
-        <ol class="carousel-indicators">
-          <li data-target="#myslider" data-slide-to="0"></li>
-          <li data-target="#myslider" data-slide-to="1"></li>
-          <li data-target="#myslider" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-
-        <div class="carousel-inner">        
-          <div class="item active">
-            <!-- this is the card inside carousel Appointment 1-->
-           <div class="container">
-              <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-3 mt-4">
-                  <div class="card">
-                   <div class="card-block" style="background-color:white; margin-left: 20px;border: solid 1px #d3d3d3; ; max-width: 100%; height:150px; margin-right: 12%; margin-left: 12%;">
-                      <h4 class="card-title" style="text-align: center;">Click Below to Create a New Appointment</h4>
-                      <h5 class="card-title" style="text-align: center;">Slide to view appointments</h5>
-                    </div>                  
-                  </div>                 
-                </div>
-              </div>
-            </div>           
-          </div>        
-          <a class="left carousel-control" href="#myslider" data-slide="prev">          
-            <span class="glyphicon glyphicon-chevron-left " style="color:green;"></span>          
-          </a>
-          <a class="right carousel-control" href="#myslider" data-slide="next">          
-              <span class="glyphicon glyphicon-chevron-right " style="color:green;"></span>          
-            </a>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
-  <!-- end of carousel -->
+<!-- form module end --> 
+      
 
-<!--- bottom buttuns -->
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 mx-auto" style="height: 50px; padding: 0; margin-top: 50px; ">
-      <button class="btn btn-primary" style="width:100%;height: 100%; border-radius:0px; " type="button submit" data-toggle="modal" data-target="#exampleModalLong">New Appointment +</button>
-    </div>
-  </div>
-</div>    
+      
     
+    
+    
+    <script src="chance.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
   
-    <div class="container">
-       <div class="row">
-         <div class="col-xs-1 mx-auto" style="background-color: white; height: 50px; width: 100%; margin-top: 50px;">
-           <a class="btn btn-primary" onclick="window.open('https://trello.com/b/dk2iHG2i/q-1-project')" role="button">Link to trelo board</a>
-         </div>
-       </div>
-    </div>
-
-  <script type="text/javascript" src="module.js"></script>
-
-  <script type="text/javascript" src="newcard.js"></script>
-
+    
+    
+    
+    
+    
+    
+  </body>
 
 </body>
 
