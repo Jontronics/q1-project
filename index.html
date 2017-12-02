@@ -43,7 +43,7 @@ https://www.cssscript.com/demo/modern-filterable-dropdown-select-vanilla-javascr
 
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 mx-auto" style="background-color: white; height: 400px; width: 100%; margin-left: 17px;">
+      <div class="col-xs-12 mx-auto" style="background-color: white; height: 400px; width: 100%; margin-left: 1px;">
         <div class="iframe-container" style="margin">
           <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d12099.01427381545!2d-73.91834625!3d40.7014247!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1511111754521" width="100%" height="400px" frameborder="0" style="border:0; margin-left:-15px;"
             allowfullscreen></iframe>
@@ -54,13 +54,15 @@ https://www.cssscript.com/demo/modern-filterable-dropdown-select-vanilla-javascr
 
     <div class="container" style="margin-top:50px;">  
     <!-- this is where the new card gets formed -->  
+      
       <div class="col-lg-12">
         <div id="issuesList">
         </div>
       </div>
       
     <!-- this is where the new card gets formed -->  
-    
+        
+    <!-- button to toggle modal window -->    
     <div class="container">
       <div class="row">
         <div class="col-xs-12 mx-auto" style="height: 50px; padding: 0; margin-top: 50px; ">
@@ -74,7 +76,7 @@ https://www.cssscript.com/demo/modern-filterable-dropdown-select-vanilla-javascr
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Create a New Appointmen</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Create a New Appointment</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -84,33 +86,50 @@ https://www.cssscript.com/demo/modern-filterable-dropdown-select-vanilla-javascr
         <!--- 1st input form -->
         <div class="container">
           <div class="row">
-            <div class="col-xs-12 col-md-12 col-lg-12" style="background-color: white; height: 450px; max-width:400px;">
+            <div class="col-xs-12 col-md-12 col-lg-12" style="background-color: white; height: 550px; max-width:400px;">
               <div class="container" style="">
                 <div id="main" class="card card-body">
 
                   <!-- insert new form here -->
                   
-                  <div class="jumbotron">
-                    <h3>Add New Issue:</h3>
+                  <div class="jumbotron">                
                     
                     <form id="issueInputForm">        
                       <div class="form-group">
-                        <label for="appointmentAddress">Appoitnment Address</label>
+                        <label for="appointmentAddress">Address of appointment</label>
                         <input type="text" class="form-control" id="appointmentAddress" placeholder="Enter the apointment adress ...">
                       </div>
                       
                       <div class="form-group">
                         <label for="issueDescInput">Time of appointment</label>
-                        <input type="time-local" class="form-control" id="issueDescInput" placeholder="enter time of appointment eg 2 pm .">
+                        <input type="time-local" class="form-control" id="issueDescInput" placeholder="Enter time of appointment eg 2 pm .">
                       </div>
                     
                       <div class="form-group">
-                        <label for="issueAssignedToInput">Assigned To</label>
-                        <input type="text" class="form-control" id="issueAssignedToInput" placeholder="Enter responsible ...">
+                        <label for="issueAssignedToInput">Name of Client</label>
+                        <input type="text" class="form-control" id="issueAssignedToInput" placeholder="Enter name of client ...">
                       </div>
-                      <button type="submit" class="btn btn-primary">Add</button>
+                      
+                      <div class="form-group">
+                        <label for="issueAssignedToInputNumber">Client phone number</label>
+                        <input type="text" class="form-control" id="issueAssignedToInputNumber" placeholder="Enter phone number of client ...">
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="issueAccess">Notes on Access</label>
+                        <input type="text" class="form-control" id="issueAccess" placeholder="eg ; Apt 2F keys in office ...">
+                      </div>
+                      
+                      <button type="submit" class="btn btn-primary" style="width:100%;">Add</button>
                     </form>  
-                  </div>              
+                  </div>  
+                  
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" style="width:100%;">Close</button>
+                  </div>
+                  
+                  
+                              
                 </div>
               </div>
             </div>
