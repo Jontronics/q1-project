@@ -107,7 +107,7 @@ function fetchIssues() {
                               '<h4>' + assignedTo + '</h4>'+
                               '<h4>' + number + '</h4>'+
                               '<h4>' + notes + '</h4>'+
-                              '<a href="#" onclick="deleteIssue(\''+id+'\')" class="btn btn-danger">Delete</a>'+
+                              '<a href="#" onclick="deleteIssue(\''+id+'\')" class="btn btn-danger" style="width:100%;">Delete</a>'+
                               '</div>';                                                        
   }
 }
