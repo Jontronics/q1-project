@@ -7,7 +7,7 @@ function saveIssue(e) {
   var issueAddy = document.getElementById('appointmentAddress').value;
   var issueDesc = document.getElementById('issueDescInput').value;
   var issueAssignedTo = document.getElementById('issueAssignedToInput').value;
-  var issueId = chance.guid();   // crazy global unit identifer. figured maybe id need this but not sure. (each card will have a unique number id)
+  var issueId = chance.guid();   // crazy global unit identifer. figured maybe i would need this but not sure. (each card will have a unique number id)
   var issueStatus = 'Open';
   var issueNumber = document.getElementById('issueAssignedToInputNumber').value;
   var issueNotes = document.getElementById('issueAccess').value;
@@ -47,7 +47,7 @@ function saveIssue(e) {
 
   document.getElementById('issueInputForm').reset();  // reset the input elements
 
-  fetchIssues();  /* now with a new leement inserted into local storage , we need to call fetch 
+  fetchIssues();  /* now with a new element inserted into local storage , we need to call fetch 
                      issues again so that the list out put is re-generated and the new element 
                      is included into the list out put aswell . */ 
 
@@ -58,7 +58,7 @@ function saveIssue(e) {
 
 function deleteIssue(id) {
   var issues = JSON.parse(localStorage.getItem('issues'));  // retreive from local storage 
-  for (var i = 0; i < issues.length; i++) {                 // iterate over all of the items. 
+  for (var i = 0; i < issues.length; i++) {                 // iterate over all of the items in the object. 
     if (issues[i].id == id) {
       issues.splice(i, 1);                                  // splice the element out of the array, removed from the array. 
     }
