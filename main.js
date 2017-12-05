@@ -12,7 +12,6 @@ function saveIssue(e) {
   var issueNumber = document.getElementById('issueAssignedToInputNumber').value;
   var issueNotes = document.getElementById('issueAccess').value;
 
-
   // put the issue form values into an object. 
 
   var issue = {
@@ -111,4 +110,5 @@ function fetchIssues() {
                               '</div>';                                                        
   }
 }
+
 
