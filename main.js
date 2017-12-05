@@ -7,7 +7,7 @@ function saveIssue(e) {
   var issueAddy = document.getElementById('appointmentAddress').value;
   var issueDesc = document.getElementById('issueDescInput').value;
   var issueAssignedTo = document.getElementById('issueAssignedToInput').value;
-  var issueId = chance.guid();   // crazy global unit identifer. figured maybe i would need this but not sure. (each card will have a unique number id)
+  var issueId = chance.guid();   // crazy global unit identifer that JP put me on. figured maybe i would need this but not sure. (each card will have a unique number id)
   var issueStatus = 'Open';
   var issueNumber = document.getElementById('issueAssignedToInputNumber').value;
   var issueNotes = document.getElementById('issueAccess').value;
@@ -38,6 +38,9 @@ function saveIssue(e) {
     var issues = [];   
     issues.push(issue);
     localStorage.setItem('issues', JSON.stringify(issues));
+    
+    console.log(issues)
+    
   } else {
     var issues = JSON.parse(localStorage.getItem('issues'));
     issues.push(issue); // extending the array, one more element is put in. 
@@ -78,13 +81,12 @@ function fetchIssues() {
 
   issuesList.innerHTML = '';   // intitialize the content. make sure its empty. (empty string the inner html)
 
-
   /* 
   bring in a loop and iterate over the issue items which are in the issues
   object. and for each of the issue item, inside of that array we need to 
   generate the html code. Which is needed to , to produce the output we want to have, 
   and that output needs to be aaded to the html property of issues list.
-  and thats the way we are generating the dynamic list output. 
+  and thats the way we are generating the dynamic / prepared list output for html creation. 
   */
 
   for (var i = 0; i < issues.length; i++) { 

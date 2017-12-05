@@ -1,107 +1,79 @@
-
-
-// problem.. cant seem to call or retreive the values from the modal form in here. 
-
-
-document.getElementById('issueInputForm').addEventListener('submit', saveNewIssue, initMap,); 
+document.getElementById('issueInputForm').addEventListener('submit', saveNewIssue, initMap); 
 
 
 function saveNewIssue(e){
-  
-  // lets retreive the values from the form. 
+  // lets retreive the values from the form. // convert the address to lat long 
   var issueAddyNew = document.getElementById('appointmentAddress').value;
+  var issueDescNew = document.getElementById('issueDescInput').value;
 
+  // console.log(issueDescNew)
   
-  axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
-  
+  axios.get('https://maps.googleapis.com/maps/api/geocode/json', {  
     params:{
       address:issueAddyNew,
       key: 'AIzaSyDd_WKJE_x1xUVMrZsT6lXOsqua72m19HA'
-  
-    }
-  
+    }  
   })  
   
-  .then(function(response){
-    
-    // logging in the full response
-    
-      console.log(response)
-      
-      console.log(response.data.results[0].geometry.location);
-        
-  })
-  .catch(function(error){
-    
-    // log lat and long 
-    
+  .then(function(response){      
+    var convertedAddy = response.data.results[0].geometry.location;    
+    // console.log(convertedAddy)            
+    // put the issue form values into an object.     
+    var issueNew = {      
+      address: convertedAddy
+      // time: issueDescNew
+    }    
+    // Put the object into storage
+      localStorage.setItem('issueNew', JSON.stringify(issueNew));  
+  })  
+  .catch(function(error){   
+    alert("put in correct addy");       
   });
-
-  }
-  
-
-// convert input address field into a "formatted address".
+}
 
 
-// function geocode(){
-  
-  // var issueAddyForMap = document.getElementById('appointmentAddress').value; 
-
-// cant seem to get the input field right from the submtion doc.....
-
-
-// var location = " ";   // hard coded address;
-
-
-// axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
-// 
-//   params:{
-//     address:location,
-//     key: 'AIzaSyDd_WKJE_x1xUVMrZsT6lXOsqua72m19HA'
-// 
-//   }
-// 
-// })  
-
-// .then(function(response){
-// 
-//   // logging in the full response
-// 
-//     console.log(response)
-// 
-//     console.log(response.data.results[0].geometry.location);
-// 
-// 
-// 
-// 
-// 
-// })
-// .catch(function(error){
-// 
-//   // log lat and long 
-// 
-// });
-// 
-// }
-
-
-
-
-
-
-
+// Retrieve the object from loal storage
+ // var retrievedObject = localStorage.getItem('issueNew');
+ 
+ var newTest = JSON.parse(localStorage.getItem('issueNew'));
+ 
+ var locations = [];
+ 
+ 
+ 
+ locations.push(newTest) 
+ // console.log(locations)
+ 
 function initMap(e){
-  
   var options = {
-    
-    zoom: 14,
+    zoom: 13,
     center: {lat:40.7043, lng:-73.9213}
-    
   }
+
+// new map 
+for (var i = 0; i < locations.length; i ++){
+
+  var map = new google.maps.Map(document.getElementById('map'), options);  
+    var marker = new google.maps.Marker({  
+      position:locations[0].address ,
+      map:map  
   
-  var map = new google.maps.Map(document.getElementById('map'), options);
-  
+    })    
+
+   }
 
 }
+
+
+ 
+
+
+   
+  
+ 
+   
+ 
+
+
 
   
