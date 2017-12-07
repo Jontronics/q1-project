@@ -58,8 +58,9 @@ function saveNewIssue(e){
 
  for (var i = 0; i < newTest.length; i ++){
      var marker = new google.maps.Marker({  
-       position:newTest[i], 
-       map:map  
+       position:newTest[i] , 
+       map:map 
+    
    
      })    
 
