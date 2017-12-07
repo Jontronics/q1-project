@@ -51,18 +51,23 @@ function saveNewIssue(e){
      zoom: 13,
      center: {lat:40.7043, lng:-73.9213}
    }
+   
+   
 
  // new map 
 
  var map = new google.maps.Map(document.getElementById('map'), options);
 
+ 
+
  for (var i = 0; i < newTest.length; i ++){
      var marker = new google.maps.Marker({  
        position:newTest[i] , 
        map:map 
-    
+       
+      
    
-     })    
+     })         
 
     }
 
